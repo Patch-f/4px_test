@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', '4px') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -33,7 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{route('user.index')}}">{{ __('Users') }}</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{route('section.index')}}">{{ __('Sections') }}</a>
+                      </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
