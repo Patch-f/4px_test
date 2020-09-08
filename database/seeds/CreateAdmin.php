@@ -15,6 +15,9 @@ class CreateAdmin extends Seeder
         'name' => 'Admin',
         'email' => 'admin@test.loc',
         'password' => bcrypt('password '),
+        'remember_token' => Str::random(10),
+        'created_at' => now(),
+        'updated_at' => now(),
       ]);
     }
 }
