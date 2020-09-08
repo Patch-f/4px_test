@@ -11,6 +11,8 @@ class CreateUsers extends Seeder
      */
     public function run()
     {
-      
+      factory(App\User::class, 15)->create()->each(function ($user) {
+        // $user->posts()->save(factory(App\Post::class)->make());
+      });
     }
 }
