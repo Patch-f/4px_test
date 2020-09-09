@@ -19,9 +19,11 @@
                           </th>
                           <th>
                             Users:
-                            <ul>
-                              <li></li>
-                            </ul>
+                            <ol>
+                              @foreach ($value->users as $user_key => $user_value)
+                                <li>{{$user_value['name']}}</li>
+                              @endforeach
+                            </ol>
                           </th>
                           <th>
                             <a class="btn btn-secondary" href="{{route('section.edit',$value['id'])}}">

@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * All sections where the user is
+     */
+    public function sections()
+    {
+      return $this->belongsToMany('App\Section');
+    }
 }

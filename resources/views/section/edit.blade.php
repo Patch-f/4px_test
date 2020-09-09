@@ -31,8 +31,8 @@
                       @foreach ($users as $key => $value)
                         <span>
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                            <label class="form-check-label" for="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" value="{{$value['id']}}" id="attachedUsersCheck{{$value['id']}}" name="users[]" {{( in_array($value['id'], $attached_users) ? 'checked' : '')}}>
+                            <label class="form-check-label" for="attachedUsersCheck{{$value['id']}}">
                               {{$value['name']}} (<a href="{{route('user.edit',$value['id'])}}">{{$value['email']}}</a>)
                             </label>
                           </div>

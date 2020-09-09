@@ -48,7 +48,7 @@ class SectionController extends Controller
 
       $request->validate([
         'name'=>'required',
-        'description'=>'required',
+        // 'description'=>'required',
       ]);
 
       $section = Section::create($request->all());
@@ -76,10 +76,12 @@ class SectionController extends Controller
     public function edit(Section $section)
     {
       $users = User::all();
+      $attached_users = $section->users->modelKeys();
 
       return view('section.edit',[
         'section' => $section,
         'users' => $users,
+        'attached_users' => $attached_users,
       ]);
     }
 
@@ -94,10 +96,12 @@ class SectionController extends Controller
     {
       $request->validate([
         'name'=>'required',
-        'description'=>'required',
+        'users'=>'array',
       ]);
 
       $section->fill($request->all());
+      $section->users()->sync($request->get('users'));
+
       $section->save();
 
       return redirect(route('section.index'));

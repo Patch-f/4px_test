@@ -15,4 +15,12 @@ class Section extends Model
       'name',
       'description',
   ];
+
+  /**
+   * All users who are in the section
+   */
+  public function users()
+  {
+    return $this->belongsToMany('App\User');
+  }
 }
