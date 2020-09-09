@@ -34,7 +34,7 @@
                         </div>
                       </div>
                     @endif
-                    <input class="btn btn-primary" type="submit" value="{{__('Save')}}">
+                    <input class="btn btn-primary" type="submit" value="{{__('Send')}}">
                   </form>
                 </div>
             </div>
