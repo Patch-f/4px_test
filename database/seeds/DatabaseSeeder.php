@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
     {
       $this->call([
         CreateAdmin::class,
+        CreateSections::class,
         CreateUsers::class,
       ]);
     }
