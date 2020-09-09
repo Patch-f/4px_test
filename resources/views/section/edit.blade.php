@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Create section') }}</div>
 
                 <div class="card-body">
-                  <form class="" action="{{route('section.update',$section['id'])}}" method="post">
+                  <form class="" action="{{route('section.update',$section['id'])}}" method="post" enctype="multipart/form-data">
                     @csrf
                     {{ method_field('PATCH') }}
                     <div class="form-group">

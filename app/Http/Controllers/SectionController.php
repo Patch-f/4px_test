@@ -97,9 +97,16 @@ class SectionController extends Controller
       $request->validate([
         'name'=>'required',
         'users'=>'array',
+        'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
       ]);
 
       $section->fill($request->all());
+      if ($request->logo) {
+        $logo_name = $section['id'].'.jpeg';
+
+        $request->logo->storeAs('logo',$logo_name,'public');
+        $section->logo = $logo_name;
+      }
       $section->users()->sync($request->get('users'));
 
       $section->save();
@@ -115,6 +122,12 @@ class SectionController extends Controller
      */
     public function destroy(Section $section)
     {
+      $section->users()->detach();
+
+      if ($section->logo) {
+        \Illuminate\Support\Facades\Storage::disk('public')->delete('logo/'.$section->logo);
+      }
+
       $section->delete();
 
       return redirect(route('section.index'));
