@@ -1,2 +1,3 @@
 php artisan migrate:fresh
 php artisan db:seed
+set /p DUMMY=Hit ENTER to continue...
