@@ -20,4 +20,10 @@ Test solution: https://docs.google.com/document/d/1k7CRLrcQozJSBCleI5kvwHrOzMquE
 
 #### If you need test data
 
-```php artisan db:seed```  
+```php artisan db:seed```
+
+##### Test admin user
+```
+login: admin@test.loc
+password: password
+```
