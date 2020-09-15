@@ -1,5 +1,4 @@
 # Test app for 4px
-Test solution: https://docs.google.com/document/d/1k7CRLrcQozJSBCleI5kvwHrOzMquEQD54UUnGd2-0Co/edit#
 
 ## install
 
